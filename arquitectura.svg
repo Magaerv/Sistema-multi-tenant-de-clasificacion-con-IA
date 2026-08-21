@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600" font-family="ui-sans-serif, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5b657a"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="600" fill="#0f1117"/>
+
+  <text x="40" y="52" fill="#e6e9ef" font-size="26" font-weight="700">Sistema multi-tenant de clasificación con IA</text>
+  <text x="40" y="78" fill="#8b94a6" font-size="14">Un workflow · dos canales de entrada · configuración por cliente resuelta en ejecución</text>
+
+  <!-- Canales de entrada -->
+  <g>
+    <rect x="40" y="104" width="380" height="52" rx="8" fill="#141824" stroke="#2a3145"/>
+    <text x="60" y="127" fill="#7c9cff" font-size="13" font-weight="600">Formulario web</text>
+    <text x="60" y="145" fill="#8b94a6" font-size="12">POST · identidad en cabecera x-api-key</text>
+
+    <rect x="440" y="104" width="380" height="52" rx="8" fill="#141824" stroke="#2a3145"/>
+    <text x="460" y="127" fill="#4fd1c5" font-size="13" font-weight="600">WhatsApp</text>
+    <text x="460" y="145" fill="#8b94a6" font-size="12">Webhook de Evolution API · identidad por instancia</text>
+  </g>
+
+  <path d="M230,156 L230,180 L430,180" stroke="#5b657a" stroke-width="1.5" fill="none"/>
+  <path d="M630,156 L630,180 L430,180" stroke="#5b657a" stroke-width="1.5" fill="none"/>
+  <path d="M430,180 L430,200" stroke="#5b657a" stroke-width="1.5" fill="none" marker-end="url(#a)"/>
+
+  <!-- Capas -->
+  <g font-size="12">
+    <g>
+      <rect x="40" y="212" width="175" height="118" rx="8" fill="#171a23" stroke="#2a2f3d"/>
+      <rect x="40" y="212" width="175" height="3" rx="2" fill="#7c9cff"/>
+      <text x="58" y="238" fill="#5b657a" font-size="11" font-weight="700">01</text>
+      <text x="58" y="260" fill="#e6e9ef" font-size="13" font-weight="600">Normalización</text>
+      <text x="58" y="284" fill="#8b94a6">Detecta canal.</text>
+      <text x="58" y="300" fill="#8b94a6">Descarta mensajes</text>
+      <text x="58" y="316" fill="#8b94a6">propios (anti-loop).</text>
+    </g>
+    <path d="M219,271 L235,271" stroke="#5b657a" stroke-width="1.5" marker-end="url(#a)"/>
+
+    <g>
+      <rect x="229" y="212" width="175" height="118" rx="8" fill="#171a23" stroke="#2a2f3d"/>
+      <rect x="229" y="212" width="175" height="3" rx="2" fill="#7c9cff"/>
+      <text x="247" y="238" fill="#5b657a" font-size="11" font-weight="700">02</text>
+      <text x="247" y="260" fill="#e6e9ef" font-size="13" font-weight="600">Resolución</text>
+      <text x="247" y="284" fill="#8b94a6">Configuración del</text>
+      <text x="247" y="300" fill="#8b94a6">cliente desde tabla</text>
+      <text x="247" y="316" fill="#8b94a6">externa.</text>
+    </g>
+    <path d="M408,271 L424,271" stroke="#5b657a" stroke-width="1.5" marker-end="url(#a)"/>
+
+    <g>
+      <rect x="418" y="212" width="175" height="118" rx="8" fill="#171a23" stroke="#2a2f3d"/>
+      <rect x="418" y="212" width="175" height="3" rx="2" fill="#f0a35e"/>
+      <text x="436" y="238" fill="#5b657a" font-size="11" font-weight="700">03</text>
+      <text x="436" y="260" fill="#e6e9ef" font-size="13" font-weight="600">Validación</text>
+      <text x="436" y="284" fill="#8b94a6">Sin coincidencia,</text>
+      <text x="436" y="300" fill="#8b94a6">HTTP 401 antes de</text>
+      <text x="436" y="316" fill="#8b94a6">invocar el modelo.</text>
+    </g>
+    <path d="M597,271 L613,271" stroke="#5b657a" stroke-width="1.5" marker-end="url(#a)"/>
+
+    <g>
+      <rect x="607" y="212" width="175" height="118" rx="8" fill="#171a23" stroke="#2a2f3d"/>
+      <rect x="607" y="212" width="175" height="3" rx="2" fill="#4fd1c5"/>
+      <text x="625" y="238" fill="#5b657a" font-size="11" font-weight="700">04</text>
+      <text x="625" y="260" fill="#e6e9ef" font-size="13" font-weight="600">Historial</text>
+      <text x="625" y="284" fill="#8b94a6">Últimos 10 mensajes.</text>
+      <text x="625" y="300" fill="#8b94a6">PostgreSQL, filtrado</text>
+      <text x="625" y="316" fill="#8b94a6">por instancia.</text>
+    </g>
+    <path d="M786,271 L802,271" stroke="#5b657a" stroke-width="1.5" marker-end="url(#a)"/>
+
+    <g>
+      <rect x="796" y="212" width="175" height="118" rx="8" fill="#171a23" stroke="#2a2f3d"/>
+      <rect x="796" y="212" width="175" height="3" rx="2" fill="#4fd1c5"/>
+      <text x="814" y="238" fill="#5b657a" font-size="11" font-weight="700">05</text>
+      <text x="814" y="260" fill="#e6e9ef" font-size="13" font-weight="600">Clasificación</text>
+      <text x="814" y="284" fill="#8b94a6">LLM con contexto del</text>
+      <text x="814" y="300" fill="#8b94a6">cliente. Salida JSON</text>
+      <text x="814" y="316" fill="#8b94a6">estructurada.</text>
+    </g>
+    <path d="M975,271 L991,271" stroke="#5b657a" stroke-width="1.5" marker-end="url(#a)"/>
+
+    <g>
+      <rect x="985" y="212" width="175" height="118" rx="8" fill="#171a23" stroke="#2a2f3d"/>
+      <rect x="985" y="212" width="175" height="3" rx="2" fill="#7c9cff"/>
+      <text x="1003" y="238" fill="#5b657a" font-size="11" font-weight="700">06</text>
+      <text x="1003" y="260" fill="#e6e9ef" font-size="13" font-weight="600">Registro y salida</text>
+      <text x="1003" y="284" fill="#8b94a6">Planilla propia del</text>
+      <text x="1003" y="300" fill="#8b94a6">cliente. Respuesta</text>
+      <text x="1003" y="316" fill="#8b94a6">por categoría.</text>
+    </g>
+  </g>
+
+  <!-- Resiliencia -->
+  <rect x="40" y="368" width="1120" height="96" rx="8" fill="#12151f" stroke="#2a2f3d"/>
+  <rect x="40" y="368" width="4" height="96" rx="2" fill="#f0a35e"/>
+  <text x="64" y="398" fill="#f0a35e" font-size="12" font-weight="700">RESILIENCIA</text>
+  <text x="64" y="418" fill="#8b94a6" font-size="11">Ningún lead se pierde</text>
+
+  <rect x="230" y="384" width="290" height="64" rx="6" fill="#191d29"/>
+  <text x="250" y="408" fill="#5b657a" font-size="10" font-weight="700">CAPA 1</text>
+  <text x="250" y="428" fill="#c8cede" font-size="12">Reintentos sobre el agente primario</text>
+
+  <rect x="540" y="384" width="290" height="64" rx="6" fill="#191d29"/>
+  <text x="560" y="408" fill="#5b657a" font-size="10" font-weight="700">CAPA 2</text>
+  <text x="560" y="428" fill="#c8cede" font-size="12">Agente de respaldo, otro proveedor</text>
+
+  <rect x="850" y="384" width="290" height="64" rx="6" fill="#191d29"/>
+  <text x="870" y="408" fill="#5b657a" font-size="10" font-weight="700">CAPA 3</text>
+  <text x="870" y="428" fill="#c8cede" font-size="12">Respuesta determinística, sin LLM</text>
+
+  <!-- Alcance -->
+  <rect x="40" y="484" width="1120" height="52" rx="8" fill="#12151f" stroke="#2a2f3d"/>
+  <text x="64" y="506" fill="#8b94a6" font-size="12" font-weight="700">ALCANCE DEL AISLAMIENTO</text>
+  <text x="64" y="524" fill="#8b94a6" font-size="12">Cada cliente escribe en su propio destino, resuelto por ejecución. La autorización es única del operador: la separación es de destino, no de credencial.</text>
+
+  <text x="40" y="568" fill="#c8cede" font-size="12" font-weight="600">n8n · Node.js · PostgreSQL · OAuth 2.0<tspan fill="#5b657a" font-weight="400"> · APIs de LLMs · Evolution API · APIs REST</tspan></text>
+</svg>
