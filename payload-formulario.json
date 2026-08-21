@@ -1,0 +1,11 @@
+{
+  "_comentario": "Ejemplo de solicitud del canal de formulario web. La clave del cliente NO viaja en el cuerpo: se envía en la cabecera x-api-key. El canal de WhatsApp no usa este formato: recibe el payload de Evolution API tal cual, y el tenant se resuelve por nombre de instancia.",
+  "_cabeceras_requeridas": {
+    "Content-Type": "application/json",
+    "x-api-key": "<clave del cliente>"
+  },
+  "nombre": "Nombre de ejemplo",
+  "email": "contacto@ejemplo.com",
+  "empresa": "Empresa de ejemplo",
+  "mensaje": "Hola, quería consultar por el servicio."
+}
